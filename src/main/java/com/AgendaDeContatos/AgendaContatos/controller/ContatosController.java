@@ -25,18 +25,18 @@ public class ContatosController {
         return contatosService.exibirViaId(codigo);
     }
 
-    @PostMapping
+    @PostMapping(path = "/contatos")
     @ResponseStatus(HttpStatus.CREATED)
     public ContatosModel cadastrarContatos(@RequestBody ContatosModel contatosModel) {
         return contatosService.cadastrarContatos(contatosModel);
     }
 
-    @PutMapping
+    @PutMapping(path = "/contatos/{codigo}")
     public ContatosModel alterarContatos(@RequestBody ContatosModel contatosModel) {
         return contatosService.alterarContatos(contatosModel);
     }
 
-    @DeleteMapping
+    @DeleteMapping(path = "contatos/{codigo}")
     public void deletarContatos(@PathVariable Long codigo) {
         contatosService.deletarContatos(codigo);
     }
